@@ -1,5 +1,6 @@
 # Object file
 *.o
-
+data/*
+Out_embeddings/*
 # Ada Library Information
 *.ali
