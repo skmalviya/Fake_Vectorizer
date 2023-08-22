@@ -95,8 +95,8 @@ if __name__ == "__main__":
     vocab = set(vocab)
     print(f"Approx vocab size: {len(vocab)}")
 
-    train_claim = pre_process(train_claim)
-    dev_claim = pre_process(dev_claim)
+    # train_claim = pre_process(train_claim)
+    # dev_claim = pre_process(dev_claim)
 
     vocab = [s.split() for s in train_claim + dev_claim]
     vocab = [w for subl in vocab for w in subl]
@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
         # Load AutoModel from huggingface model repository
         tokenizer = AutoTokenizer.from_pretrained(args.model)
-        tokenizer.pad_token = tokenizer.eos_token
+        if 'llama' in args.model: tokenizer.pad_token = tokenizer.eos_token
         model = AutoModel.from_pretrained(args.model).to(args.device)
         # if 'llama' in args.model:
         #     print("\nLoading llama tokenizer and model...")

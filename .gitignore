@@ -4,3 +4,7 @@ data/*
 Out_embeddings/*
 # Ada Library Information
 *.ali
+tras/*
+.ipynb_checkpoints/*
+Finetuning_MaskedLM_data_collator/*
+FineTuning_MaskedLM/*
